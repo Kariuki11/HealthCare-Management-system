@@ -6,7 +6,11 @@ import { z } from "zod"
 import { Button } from "@/components/ui/button"
 import { Form} from "@/components/ui/form"
   import { Input } from "@/components/ui/input"
-import CustomFormField from "../CustomFormField"  
+import CustomFormField from "../CustomFormField"
+
+export enum FormFieldType {
+  INPUT = 'input'
+}
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -38,6 +42,7 @@ const PatientForm = () => {
         </section>
 
         <CustomFormField
+          fieldType={FormFieldType.INPUT}
           control={form.control}
         />
 

@@ -14,7 +14,7 @@ import {
     control: Control<any>,
   }
 
-const CustomFormField = ({ control }: CustomProps) => {
+const CustomFormField = ({ control, fieldType }: CustomProps) => {
   return (
     <><FormField
           control={control}
