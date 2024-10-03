@@ -8,7 +8,7 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Control } from "react-hook-form";
+import { Control, Field } from "react-hook-form";
 import { FormFieldType } from "./forms/PatientForm";
 import { Button } from "./ui/button";
 import { Label } from "@radix-ui/react-label";
@@ -18,6 +18,14 @@ interface CustomProps {
     fieldType: FormFieldType;
     name: string; // Include the name prop in CustomProps
     label?: string;
+    placeholder?: string;
+    iconSrc?: string;
+    iconAlt?: string;
+    disabled?: boolean;
+    dateFormat?: string;
+    showTimeSelect?: boolean,
+    children?: React.ReactNode;
+    renderSkeleton?: (field: any) => React.ReactNode,
 }
 
 const CustomFormField = ({ control, fieldType, name, label }: CustomProps) => {
@@ -28,8 +36,8 @@ const CustomFormField = ({ control, fieldType, name, label }: CustomProps) => {
                 name={name} // Use the dynamic name prop
                 render={({ field }) => (
                     <FormItem className="flex-1">
-                        {fieldType !== FormFieldType.CHECKBOX && Label (
-                            <FormLabel>{Label}</FormLabel>
+                        {fieldType !== FormFieldType.CHECKBOX && label && (
+                            <FormLabel>{label}</FormLabel>
                         )}
                     </FormItem>
                 )}
