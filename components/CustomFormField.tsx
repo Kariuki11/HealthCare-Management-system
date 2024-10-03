@@ -11,29 +11,26 @@ import { Input } from "@/components/ui/input";
 import { Control } from "react-hook-form";
 import { FormFieldType } from "./forms/PatientForm";
 import { Button } from "./ui/button";
+import { Label } from "@radix-ui/react-label";
 
 interface CustomProps {
     control: Control<any>;
     fieldType: FormFieldType;
     name: string; // Include the name prop in CustomProps
+    label?: string;
 }
 
-const CustomFormField = ({ control, fieldType, name }: CustomProps) => {
+const CustomFormField = ({ control, fieldType, name, label }: CustomProps) => {
     return (
         <>
             <FormField
                 control={control}
                 name={name} // Use the dynamic name prop
                 render={({ field }) => (
-                    <FormItem>
-                        <FormLabel>Username</FormLabel>
-                        <FormControl>
-                            <Input placeholder="shadcn" {...field} />
-                        </FormControl>
-                        <FormDescription>
-                            This is your public display name.
-                        </FormDescription>
-                        <FormMessage />
+                    <FormItem className="flex-1">
+                        {fieldType !== FormFieldType.CHECKBOX && Label (
+                            <FormLabel>{Label}</FormLabel>
+                        )}
                     </FormItem>
                 )}
             />
