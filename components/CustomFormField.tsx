@@ -28,12 +28,23 @@ interface CustomProps {
 }
 
 const RenderField = ({ field, props }: {field: any; props: CustomProps}) => {
-    return (
-        <Input
-            type="text"
-            placeholder="Enter your full name"
-        />
-    )
+
+    const { fieldType, iconSrc, iconAlt, placeholder }
+
+    switch (props.fieldType) {
+        case FormFieldType.INPUT:
+            return (
+                <div className="flex rounded-md border border-dark-500 bg-dark-400">
+                    {props.iconsSrc && (
+                        <Image
+                            src={props.iconSrc}
+                        />
+                    )}
+                </div>
+            )
+            default:
+                break;
+    }
 }
 
 const CustomFormField = (props: CustomProps) => {
