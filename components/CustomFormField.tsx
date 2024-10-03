@@ -27,7 +27,7 @@ interface CustomProps {
     renderSkeleton?: (field: any) => React.ReactNode,
 }
 
-const RenderField = () => {
+const RenderField = ({ field, props }: {field: any; props: CustomProps}) => {
     return (
         <Input
             type="text"
@@ -36,7 +36,9 @@ const RenderField = () => {
     )
 }
 
-const CustomFormField = ({ control, fieldType, name, label }: CustomProps) => {
+const CustomFormField = (props: CustomProps) => {
+    const { control, fieldType, name, label } = props;
+
     return (
         <>
             <FormField
@@ -48,7 +50,9 @@ const CustomFormField = ({ control, fieldType, name, label }: CustomProps) => {
                             <FormLabel>{label}</FormLabel>
                         )}
 
-                        <RenderField field={field} />
+                        <RenderField field={field} props={props} />
+
+                        <FormMessage className="shad-error"/>
 
                     </FormItem>
                 )}
