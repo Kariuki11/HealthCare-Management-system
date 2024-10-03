@@ -57,6 +57,16 @@ const PatientForm = () => {
           iconAlt="user"
         />
 
+        <CustomFormField
+          fieldType={FormFieldType.INPUT}
+          control={form.control}
+          name="email"
+          label="Email"
+          placeholder="Enter your full name"
+          iconSrc="/assets/icons/user.svg"
+          iconAlt="user"
+        />
+
         <Button type="submit">Submit</Button>
 
       </form>
