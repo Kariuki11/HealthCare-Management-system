@@ -12,6 +12,7 @@ import { Control, Field } from "react-hook-form";
 import { FormFieldType } from "./forms/PatientForm";
 import { Button } from "./ui/button";
 import Image from 'next/image';
+import { Phone } from "lucide-react";
 
 interface CustomProps {
     control: Control<any>;
@@ -54,6 +55,12 @@ const RenderField = ({ field, props }: {field: any; props: CustomProps}) => {
                     </FormControl>
                 </div>
             )
+            case FormFieldType.PHONE_INPUT:
+                return (
+                    <FormControl>
+                        <PhoneInput/>
+                    </FormControl>
+                )
             default:
                 break;
     }
