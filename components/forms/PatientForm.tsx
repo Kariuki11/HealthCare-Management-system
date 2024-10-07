@@ -36,10 +36,18 @@ const PatientForm = () => {
   })
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof UserFormValidation>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
+  function onSubmit({ name, email, phone}: z.infer<typeof UserFormValidation>) {
+    setIsLoading(true);
+
+    try {
+      const user = {
+      name,
+      email,
+      phone,
+    }
+    } catch (error) {
+      console.error(error)
+    }
   }
   return (
     <div>
