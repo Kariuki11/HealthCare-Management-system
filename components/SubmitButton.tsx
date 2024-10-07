@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from './ui/button'
 interface ButtonProps {
     isLoading: boolean,
     className: string,
@@ -7,7 +8,14 @@ interface ButtonProps {
 
 const SubmitButton = ({ isLoading, className, children }: ButtonProps) => {
   return (
-    
+    <Button type="submit" disabled={isLoading} className={className ?? 'shad-primary-btn w-full'}>
+        {isLoading ? (
+            <div>
+
+            </div>
+        ): children}
+
+    </Button>
   )
 }
 
