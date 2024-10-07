@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Form} from "@/components/ui/form"
   import { Input } from "@/components/ui/input"
 import CustomFormField from "../CustomFormField"
+import SubmitButton from "../SubmitButton"
 
 export enum FormFieldType {
   INPUT = 'input',
@@ -76,7 +77,7 @@ const PatientForm = () => {
           iconAlt="email"
         />
 
-        {/* <Button type="submit">Submit</Button> */}
+        <SubmitButton isLoading={isLoading} />
 
       </form>
     </Form>
