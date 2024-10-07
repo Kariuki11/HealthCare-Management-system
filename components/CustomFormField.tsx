@@ -8,11 +8,11 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Control, Field } from "react-hook-form";
+import { Control, } from "react-hook-form";
 import { FormFieldType } from "./forms/PatientForm";
-import { Button } from "./ui/button";
 import Image from 'next/image';
-import { Phone } from "lucide-react";
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 interface CustomProps {
     control: Control<any>;
@@ -87,7 +87,6 @@ const CustomFormField = (props: CustomProps) => {
                     </FormItem>
                 )}
             />
-            <Button type="submit">Submit</Button>
         </>
     );
 };
