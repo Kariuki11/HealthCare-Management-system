@@ -1,7 +1,7 @@
 import * as sdk from 'node-appwrite'
 
 export const {
-    PROJECT_ID, API_KEY, DATABASE_ID, PATIENT_COLLECTION, DOCTOR_COLLECTION_ID, APPOINTMENT_COLLECTION_ID,
+    NEXT_PROJECT_ID, NEXT_API_KEY, NEXT_DATABASE_ID, NEXT_PATIENT_COLLECTION, NEXT_DOCTOR_COLLECTION_ID, NEXT_APPOINTMENT_COLLECTION_ID,
     NEXT_PUBLIC_BUCKET_ID: BUCKET_ID,
     NEXT_PUBLIC_ENDPOINT: ENDPOINT
 } = process.env;
@@ -9,9 +9,9 @@ export const {
 const client = new sdk.Client();
 
 client
-    .setEndpoint(ENDPOINT!)
-    .setProject(PROJECT_ID!)
-    .setKey(API_KEY!)
+    .setEndpoint("https://cloud.appwrite.io/v1")
+    .setProject("6703b66300218c25b363")
+    .setKey("standard_d38f2ecae16e52d47c1912fb44cf7e7148bfcb8e8077e3c7da1b615d964d7361575baea4c973875430d739d009e16e5958dea79ebcbd31b48e98aa7446588d7986")
 
 export const databases = new sdk.Databases(client);
 export const storage = new sdk.Storage(client);
