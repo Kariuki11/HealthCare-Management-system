@@ -8,6 +8,7 @@ export const {
 
 const client = new sdk.Client();
 
+
 client
     .setEndpoint("https://cloud.appwrite.io/v1")
     .setProject("6703b66300218c25b363")

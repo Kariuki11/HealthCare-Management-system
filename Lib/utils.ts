@@ -44,6 +44,7 @@ export const formatDateTime = (dateString: Date | string) => {
     "en-US",
     dateTimeOptions
   );
+  
 
   const formattedDateDay: string = new Date(dateString).toLocaleString(
     "en-US",
