@@ -9,16 +9,10 @@ export const {
 const client = new sdk.Client();
 
 
-// client
-    // .setEndpoint("https://cloud.appwrite.io/v1")
-    // .setProject("6703b66300218c25b363")
-    // .setKey("standard_d38f2ecae16e52d47c1912fb44cf7e7148bfcb8e8077e3c7da1b615d964d7361575baea4c973875430d739d009e16e5958dea79ebcbd31b48e98aa7446588d7986")
-
 client
-  .setEndpoint(process.env.NEXT_PUBLIC_ENDPOINT || "https://cloud.appwrite.io/v1")
-  .setProject(process.env.NEXT_PROJECT_ID || "6703b66300218c25b363")
-  .setKey(process.env.NEXT_API_KEY || "your_api_key_here");
-
+    .setEndpoint("https://cloud.appwrite.io/v1")
+    .setProject("6703b66300218c25b363")
+    .setKey("standard_d38f2ecae16e52d47c1912fb44cf7e7148bfcb8e8077e3c7da1b615d964d7361575baea4c973875430d739d009e16e5958dea79ebcbd31b48e98aa7446588d7986")
 
 export const databases = new sdk.Databases(client);
 export const storage = new sdk.Storage(client);
